@@ -13,7 +13,14 @@ const Introduction = () => {
         const observer = new IntersectionObserver((entries) =>
         {
             const entry = entries[0]
-            setIsVisible(entry.isIntersecting)
+            if(entry.isIntersecting)
+            {
+                setIsVisible(true)
+            }
+            else
+            {
+                return
+            }
         })
         observer.observe(myRef.current)
     }, [])
