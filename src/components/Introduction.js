@@ -29,10 +29,10 @@ const Introduction = () => {
         <section className='intro-section' id='home'>
             <div className="wrapper intro">
                 <div className='introduction-container'>
-                    <img src={profilePic} className='profile-pic' />
+                    <img src={profilePic} className='profile-pic' alt='face' />
                     <div className='introduction-text'>
                         <h1 className='intro-h1'>Hi, I'm Laci!</h1>
-                        <p className='intro-p'>I am a <span ref={myRef}>{isVisible ? <RoughNotation type='highlight' show={true} animationDelay={1000}><span className='teal'>Front-end developer</span></RoughNotation> : <span className='teal'>Front-end developer</span>}</span> based in Hungary. I'm passionate about building accessible web apps or websites that users love!</p>
+                        <p className='intro-p'>I am a <span ref={myRef}><RoughNotation type='highlight' show={isVisible} animationDelay={1000}><span className='teal'>Front-end developer</span></RoughNotation></span> based in Hungary. I'm passionate about building accessible web apps or websites that users love!</p>
                         <Button colorScheme='teal' variant='solid' className='projects-btn'><a href='#projects'>Projects</a></Button>
                     </div>
                 </div>

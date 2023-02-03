@@ -6,7 +6,6 @@ import { useDisclosure } from '@chakra-ui/react'
 import {
     Drawer,
     DrawerBody,
-    DrawerHeader,
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
