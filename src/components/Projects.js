@@ -54,7 +54,7 @@ const Projects = () => {
                     <div className="project">
                         <img src={pwgenerator} className='projects-img' alt='password generator'/>
                         <div className="project-description">
-                        <div ref={project2}><RoughNotation type='underline' show={isVisible} animationDelay={3000}><h3 className='project-title-h3'>Password Generator</h3></RoughNotation></div>
+                        <div ref={project2}><RoughNotation type='underline' show={isVisible} animationDelay={2500}><h3 className='project-title-h3'>Password Generator</h3></RoughNotation></div>
                             Random password generator with a button to generate new passwords between 5-20 characters and a feature to copy the passwords to clipboard and delete them one by one or clear all at once.
                             <div className='buttons'>
                                 <a href='https://github.com/dlxzeus777/password-generator' target='_blank' rel='noreferrer'><AiFillGithub className='project-icons' /></a>
@@ -65,7 +65,7 @@ const Projects = () => {
                     <div className="project">
                         <img src={cryptocloud} className='projects-img' alt='crypto cloud'/>
                         <div className="project-description">
-                        <div ref={project3}><RoughNotation type='underline' show={isVisible} animationDelay={4000}><h3 className='project-title-h3'>Crypto Cloud</h3></RoughNotation></div>
+                        <div ref={project3}><RoughNotation type='underline' show={isVisible} animationDelay={3000}><h3 className='project-title-h3'>Crypto Cloud</h3></RoughNotation></div>
                             Cryptocloud is a website that allows users to search and learn about various cryptocurrencies and non-fungible tokens (NFTs)
                             <div className='buttons'>
                                 <a href='https://github.com/dlxzeus777/Crypto-Cloud' target='_blank' rel='noreferrer'><AiFillGithub className='project-icons' /></a>
