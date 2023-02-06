@@ -1,23 +1,36 @@
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { RxHamburgerMenu } from 'react-icons/rx'
 import { BiSun } from 'react-icons/bi'
 import { HiMoon } from 'react-icons/hi'
-import { useContext, useRef } from 'react'
-import { useDisclosure } from '@chakra-ui/react'
-import {
-    Drawer,
-    DrawerBody,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-} from '@chakra-ui/react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { ThemeContext } from '../context/context'
 
 const Header = () => {
 
     const { theme, modes } = useContext(ThemeContext)
 
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const btnRef = useRef()
+    const [sidebarToggled, setSidebarToggled] = useState(false)
+
+    const sidebarRef = useRef()
+
+    useEffect(() => {
+        function handler(e) {
+            if (sidebarRef.current) {
+                if (!e.target.classList.contains('sidebar') && !e.target.classList.contains('hamburger-icon')) {
+                    setSidebarToggled(false)
+                }
+            }
+        }
+
+        document.addEventListener('click', handler)
+
+        return () => {
+            document.removeEventListener('click', handler)
+        }
+
+
+    })
+
+
 
     return (
         <header>
@@ -28,27 +41,16 @@ const Header = () => {
                 <a href="#projects" className='nav-items'>Projects</a>
                 <button className='theme-changer' onClick={modes}>{theme ? <HiMoon /> : <BiSun />}</button>
             </div>
-            <GiHamburgerMenu className='hamburger-icon' ref={btnRef} onClick={onOpen} />
-            <Drawer
-                isOpen={isOpen}
-                placement='right'
-                onClose={onClose}
-                finalFocusRef={btnRef}
-            >
-                <DrawerOverlay /> 
-                <DrawerContent>
-                    <DrawerCloseButton />
-
-                    <DrawerBody>
-                        <div className='mobile-nav'>
-                            <a href="#home" onClick={onClose} className='mobile-nav-items'>Home</a>
-                            <a href="#about" onClick={onClose} className='mobile-nav-items'>About</a>
-                            <a href="#projects" onClick={onClose} className='mobile-nav-items'>Projects</a>
-                            <button className='theme-changer' onClick={modes}>{theme ? <HiMoon /> : <BiSun />}</button>
-                        </div>
-                    </DrawerBody>
-                </DrawerContent>
-            </Drawer>
+            <RxHamburgerMenu className='hamburger-icon' onClick={() => setSidebarToggled(true)} />
+            <aside ref={sidebarRef} className={`sidebar ${sidebarToggled ? 'active' : ''}`}>
+                <div className='exit-container'>
+                    <button className='exit-btn' onClick={() => setSidebarToggled(false)}>X</button>
+                </div>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <button className='theme-changer' onClick={modes}>{theme ? <HiMoon /> : <BiSun />}</button>
+            </aside>
         </header>
     )
 }

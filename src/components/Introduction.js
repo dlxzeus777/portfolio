@@ -33,7 +33,7 @@ const Introduction = () => {
                     <div className='introduction-text'>
                         <h1 className='intro-h1'>Hi, I'm Laci!</h1>
                         <p className='intro-p'>I am a <span ref={myRef}><RoughNotation type='highlight' show={isVisible} animationDelay={1000}><span className='teal'>Front-end developer</span></RoughNotation></span> based in Hungary. I'm passionate about building accessible web apps or websites that users love!</p>
-                        <Button colorScheme='teal' variant='solid' className='projects-btn'><a href='#projects'>Projects</a></Button>
+                        <a href='#projects'><Button colorScheme='teal' variant='solid' className='projects-btn'>Projects</Button></a>
                     </div>
                 </div>
             </div>
