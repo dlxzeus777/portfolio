@@ -1,6 +1,8 @@
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { BiSun } from 'react-icons/bi'
 import { HiMoon } from 'react-icons/hi'
+import { RxCross2 } from 'react-icons/rx'
+
 import { useContext, useEffect, useRef, useState } from 'react'
 import { ThemeContext } from '../context/context'
 
@@ -44,7 +46,7 @@ const Header = () => {
             <RxHamburgerMenu className='hamburger-icon' onClick={() => setSidebarToggled(true)} />
             <aside ref={sidebarRef} className={`sidebar ${sidebarToggled ? 'active' : ''}`}>
                 <div className='exit-container'>
-                    <button className='exit-btn' onClick={() => setSidebarToggled(false)}>X</button>
+                    <button className='exit-btn' onClick={() => setSidebarToggled(false)}><RxCross2 className='x-icon' /></button>
                 </div>
                 <a href="#home">Home</a>
                 <a href="#about">About</a>

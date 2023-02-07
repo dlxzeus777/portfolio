@@ -351,6 +351,7 @@ aside > a{
   border-bottom: 1px solid white;
   width: 100%;
   padding-bottom: .25rem;
+  font-weight: bold;
 }
 .active
 {
@@ -364,9 +365,14 @@ aside > a{
 }
 .exit-btn
 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   background: white;
-} 
+  padding: 0.25rem;
+}
+.x-icon
+{
+  display: flex;
+}
