@@ -81,7 +81,7 @@ nav
 }
 
 
-@media (max-width: 1110px)
+@media (max-width: 600px)
 {
   nav{
     width: 100vw;
@@ -103,6 +103,9 @@ nav
   {
     background: var(--chakra-colors-teal-500);
   }
+  section{
+    margin-left: 0 !important;
+  }
 }
 
 @media (max-width: 300px)
@@ -113,7 +116,8 @@ nav
   }
 }
 
-@media (min-width: 1115px)
+
+@media (min-width: 600px)
 {
   .nav-li:last-child
 {
@@ -136,6 +140,8 @@ nav:hover .link-text
   cursor: pointer;
 }
 }
+  
+
 
 /* header{
   display: flex;
@@ -280,7 +286,6 @@ nav:hover .link-text
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0;
 }
 .arrow-down
 {
@@ -317,6 +322,7 @@ nav:hover .link-text
 section
 {
   margin: 7rem 0;
+  margin-left: 5rem;
 }
 
 /* ABOUT END */
@@ -389,13 +395,14 @@ section
 footer
 {
   margin: 7rem 0;
+  margin-left: 5rem;
 }
 
 /* FOOTER END */
 
 /* MEDIA QUERIES START */
 
-@media (max-width: 950px)
+@media (max-width: 1115px)
 {
   .about-containers
   {
@@ -417,7 +424,7 @@ footer
   }
 }
 
-@media (max-width: 845px)
+@media (max-width: 1115px)
 {
   .introduction-container
   {

@@ -14,7 +14,7 @@ const Header = () => {
 
 
     return (
-        <nav>
+        <nav style={{background: theme ? '#eee' : '', color: theme ? 'black' : 'white'}}>
             <ul className='nav-ul'>
                 <a href='#home' className='nav-li first'>
                     <AiOutlineHome className='nav-icons' />
