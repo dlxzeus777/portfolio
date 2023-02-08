@@ -16,7 +16,7 @@ export const ThemeContextProvider = ({ children }) => {
     {
         if(!theme)
         {
-            document.body.style.background = 'rgb(28 25 23)'
+            document.body.style.background = '#23232e'
             document.body.style.color = 'white'
         }
         else

@@ -1,59 +1,38 @@
-import { RxHamburgerMenu } from 'react-icons/rx'
 import { BiSun } from 'react-icons/bi'
 import { HiMoon } from 'react-icons/hi'
-import { RxCross2 } from 'react-icons/rx'
+import { CgProfile } from 'react-icons/cg'
+import { AiOutlineHome } from 'react-icons/ai'
+import { AiOutlineFundProjectionScreen } from 'react-icons/ai'
 
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext } from 'react'
 import { ThemeContext } from '../context/context'
 
 const Header = () => {
 
     const { theme, modes } = useContext(ThemeContext)
 
-    const [sidebarToggled, setSidebarToggled] = useState(false)
-
-    const sidebarRef = useRef()
-
-    useEffect(() => {
-        function handler(e) {
-            if (sidebarRef.current) {
-                if (!e.target.classList.contains('sidebar') && !e.target.classList.contains('hamburger-icon')) {
-                    setSidebarToggled(false)
-                }
-            }
-        }
-
-        document.addEventListener('click', handler)
-
-        return () => {
-            document.removeEventListener('click', handler)
-        }
-
-
-    })
-
 
 
     return (
-        <header>
-            <div className="logo">Sinka Laszlo</div>
-            <div className="header-anchors">
-                <a href="#home" className='nav-items'>Home</a>
-                <a href="#about" className='nav-items'>About</a>
-                <a href="#projects" className='nav-items'>Projects</a>
-                <button className='theme-changer' onClick={modes}>{theme ? <HiMoon /> : <BiSun />}</button>
-            </div>
-            <RxHamburgerMenu className='hamburger-icon' onClick={() => setSidebarToggled(true)} />
-            <aside ref={sidebarRef} className={`sidebar ${sidebarToggled ? 'active' : ''}`}>
-                <div className='exit-container'>
-                    <button className='exit-btn' onClick={() => setSidebarToggled(false)}><RxCross2 className='x-icon' /></button>
+        <nav>
+            <ul className='nav-ul'>
+                <a href='#home' className='nav-li first'>
+                    <AiOutlineHome className='nav-icons' />
+                    <span className='link-text'>Home</span>
+                </a>
+                <a href='#about' className='nav-li'>
+                    <CgProfile className='nav-icons' />
+                    <span className='link-text'>About</span>
+                </a>
+                <a href='#projects' className='nav-li'>
+                    <AiOutlineFundProjectionScreen className='nav-icons' />
+                    <span className='link-text'>Projects</span>
+                </a>
+                <div onClick={modes} className='nav-li'>
+                    {theme ? <><HiMoon className='nav-icons' /><span className='link-text'>Dark</span></> : <><BiSun className='nav-icons' /><span className='link-text'>Light</span></>}
                 </div>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <button className='theme-changer' onClick={modes}>{theme ? <HiMoon /> : <BiSun />}</button>
-            </aside>
-        </header>
+            </ul>
+        </nav>
     )
 }
 
