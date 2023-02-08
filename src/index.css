@@ -286,6 +286,7 @@ nav:hover .link-text
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 0;
 }
 .arrow-down
 {
